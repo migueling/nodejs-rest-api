@@ -9,7 +9,7 @@ const app = express();
 const PORT = 4000;
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.use("/posts", postsRouter);
 
 app.use((error, req, res, next) => {
@@ -30,3 +30,5 @@ app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
   connectDb();
 });
+
+module.exports = app;
